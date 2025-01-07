@@ -48,3 +48,8 @@ export default tseslint.config({
   },
 })
 ```
+# Note: the production preview has issue of Buffer is not defined. To solve that refer to [Github discussion](https://github.com/vitejs/vite/discussions/2785#discussioncomment-687395)
+To fix the production issue, just go to node_modules/buffer/index.js and add this line:
+```js
+globalThis.Buffer = Buffer
+```
